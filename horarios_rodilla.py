@@ -55,6 +55,9 @@ def mostrar_horarios():
         align-items: center;
         font-size: 25px;
     }
+    [data-testid="stBaseButton-primary"] div{
+        font-size: 23px;
+    }
         </style>
         """, unsafe_allow_html=True)
     nombre = st.session_state.usuario_nombre
