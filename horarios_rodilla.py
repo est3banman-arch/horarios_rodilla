@@ -76,7 +76,7 @@ def mostrar_horarios():
 
     @st.dialog("¿Confirmar Turno?")
     def confirmar_envio(n, e, s): 
-        st.write(f"Vas a registrar el siguiente horario para hoy: ")
+        st.write(f"Vas a registrar el siguiente horario para hoy, **{hoy.strftime('%d/%m/%Y')}**: ")
         st.info(f"{n} | {e.strftime('%H:%M')} - {s.strftime('%H:%M')}")
         st.write("¿Los datos son correctos?")
 
