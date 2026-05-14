@@ -5,6 +5,21 @@ from datetime import datetime, time
 st.set_page_config(page_title="Login Rodilla", layout="centered")
 
 def mostrar_agradecimiento():
+    st.markdown("""
+        <style>
+        header[data-testid="stHeader"] {
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+    
+    header[data-testid="stHeader"]:hover {
+        opacity: 1;
+    }
+    .stMainBlockContainer {
+        padding-top: 2rem !important;
+    }             
+        </style>
+        """,unsafe_allow_html=True)
     st.header("¡Muchas Gracias!", text_alignment="center")
     st.subheader("Tu turno ha sido registrado correctamente", text_alignment="center")
     st.balloons()
@@ -17,6 +32,31 @@ def mostrar_agradecimiento():
         st.rerun()
 
 def mostrar_horarios():
+    st.markdown("""
+        <style>
+    header[data-testid="stHeader"] {
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+    
+    header[data-testid="stHeader"]:hover {
+        opacity: 1;
+    }
+    .stMainBlockContainer {
+        padding-top: 2rem !important;
+    }
+    [data-testid="stWidgetLabel"] p{
+        font-size: 25px;
+    }
+    
+    div[data-baseweb="select"] > div{
+        height: 45px !important;
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+    }
+        </style>
+        """, unsafe_allow_html=True)
     nombre = st.session_state.usuario_nombre
     hoy = datetime.now()
 
