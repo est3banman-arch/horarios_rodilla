@@ -128,7 +128,6 @@ def conteo_cajas():
     b20 = st.number_input(label="20 Euros: ", min_value=0,  key="20b")  * 20
     b10 = st.number_input(label="10 Euros: ", min_value=0,  key="10b")* 10
     b5 = st.number_input(label="5 Euros: ", min_value=0,  key="5b")  * 5
-    billetefalso = st.selectbox(options=numeros, label="",label_visibility="collapsed", index=None, placeholder="")
 
     total = e2 + e1 + c50 + c20 + c10 + c5 + c2 + c1 + b50 + b20 + b10 + b5
     declarar = total - 100
