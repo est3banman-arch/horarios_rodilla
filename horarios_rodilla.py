@@ -38,7 +38,7 @@ def estilos_globales():
         /*    vista_fechar  */      
                  
         header[data-testid="stHeader"] {
-        opacity: 0;
+        visibility: hidden;
         transition: opacity .3s ease;
         }
     
