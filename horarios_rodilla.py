@@ -38,7 +38,7 @@ def estilos_globales():
         /*    vista_fechar  */      
                  
         header[data-testid="stHeader"] {
-        visibility: hidden;
+        opacity: 0;
         transition: opacity .3s ease;
         }
     
@@ -84,13 +84,26 @@ def estilos_globales():
             display: none !important;
         }
         
+        
+        @media screen and (max-width: 480px) {
         li[role="option"] {
-            font-size: 25px !important; 
+            font-size: 16px !important; /* 16px es el número mágico para iOS */
+            padding-top: 15px !important;
+            padding-bottom: 15px !important;
+        }
+        
+        /* Forzamos que nada se salga del ancho del móvil */
+        .stMainBlockContainer {
+            overflow-x: hidden !important;
+        }
+        }
+                
+        @media screen and (min-width: 481px) {
+        li[role="option"] {
+            font-size: 25px !important;
             padding-top: 10px !important;
             padding-bottom: 10px !important;
         }
-        li[role="option"] div {
-            height: auto !important; 
         }
 
         div[data-baseweb="tab-highlight"] {
@@ -128,7 +141,7 @@ def conteo_cajas():
     b20 = st.number_input(label="20 Euros: ", min_value=0,  key="20b")  * 20
     b10 = st.number_input(label="10 Euros: ", min_value=0,  key="10b")* 10
     b5 = st.number_input(label="5 Euros: ", min_value=0,  key="5b")  * 5
-
+    
     total = e2 + e1 + c50 + c20 + c10 + c5 + c2 + c1 + b50 + b20 + b10 + b5
     declarar = total - 100
     def reset_cajas():
