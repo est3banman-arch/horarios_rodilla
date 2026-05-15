@@ -1,7 +1,5 @@
 import streamlit as st
 
-
-
 def mostrar_login():
     st.markdown("""
     <style>
@@ -48,7 +46,7 @@ def mostrar_login():
     </style>
     """,unsafe_allow_html=True)
 
-    st.header("Registro de Horas", divider="gray", text_alignment="center")
+    st.header("Registro de Horas", divider="grey", text_alignment="center")
     st.space()
     # 1. Entrada de usuario
     nombre = st.selectbox("Selecciona tu nombre", 
@@ -67,6 +65,3 @@ def mostrar_login():
             st.session_state.autenticado = True
             st.session_state.usuario_nombre = nombre
             st. rerun()
-
-
-
